@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunara - The Ultimate Executor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #28293d);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header img {
+            height: 50px;
+            animation: logoPop 1.5s infinite alternate ease-in-out;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #64c9ff;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .hero {
+            background: linear-gradient(to bottom, #3a3a5e, #1e1e2f);
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .cta-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background: #64c9ff;
+            border: none;
+            border-radius: 5px;
+            color: #1e1e2f;
+            font-weight: bold;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+        }
+
+        .cta-button:hover {
+            background: #82dfff;
+        }
+
+        .features, .about {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .executor-preview {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            width: 400px;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-box:hover ~ .executor-preview {
+            opacity: 1;
+        }
+
+        .separator {
+            width: 80%;
+            height: 2px;
+            background: #64c9ff;
+            margin: 30px auto;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        footer {
+            background-color: #151525;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @keyframes logoPop {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: scaleX(0);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            const preview = document.querySelector(".executor-preview");
+            preview.style.top = `${e.pageY}px`;
+            preview.style.left = `${e.pageX}px`;
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://f.top4top.io/p_32682u5j30.png" alt="Lunara Logo">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#download">Download</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Lunara</h1>
+        <p>The most advanced executor in the market, delivering unparalleled speed, stability, and seamless execution. Empower your creativity and redefine your tools with Lunara.</p>
+        <button class="cta-button" onclick="location.href='https://github.com/worldexecutor/Lunara/raw/refs/heads/main/Lunara.zip'">Download Now</button>
+    </section>
+
+    <div class="separator"></div>
+
+    <section id="about">
+        <h2>About Lunara</h2>
+        <p>At Lunara, we specialize in providing cutting-edge execution technology tailored to empower developers and enthusiasts. Whether you're seeking performance, ease of use, or robust security, Lunara delivers on all fronts.</p>
+    </section>
+
+    <div class="separator"></div>
+
+    <section id="features" class="features">
+        <div class="feature-box">
+            <h3>Lightning Fast</h3>
+            <p>Execute tasks with incredible speed and efficiency.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Less CPU</h3>
+            <p>Less CPU Usage. Almost at 0% CPU Usage!</p>
+        </div>
+        <div class="feature-box">
+            <h3>Keyless</h3>
+            <p>Key? Meh, no need to struggle with Lunara!</p>
+        </div>
+        <div class="feature-box">
+            <h3>Game Ready</h3>
+            <p>Compatible with all your favorite games. Hassle-free execution!</p>
+        </div>
+        <div class="feature-box">
+            <h3>Free Updates</h3>
+            <p>Receive lifetime updates at no extra cost.</p>
+        </div>
+    </section>
+
+    <img class="executor-preview" src="https://raw.githubusercontent.com/worldexecutor/Lunara/refs/heads/main/Screenshot%202024-12-12%20131704.png" alt="Executor Preview">
+
+    <section id="download">
+        <h2>Download Lunara</h2>
+        <p>Ready to experience the future? Click below to get started:</p>
+        <a href="https://github.com/worldexecutor/Lunara/raw/refs/heads/main/Lunara.zip" class="cta-button">Download Lunara</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lunara. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
